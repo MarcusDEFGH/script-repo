@@ -1,0 +1,11 @@
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ form.fields }}
+    {% for field in form %}
+        {{ render_field(field) }}
+    {% endfor %}
+  </dl>
+
+  <p><input type=submit value=Run>
+</form>

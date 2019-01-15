@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Available scripts</title>
+            <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 5px;
+                    text-align: left;    
+                }
+            </style>
+    </head>
+    <body>
+        <h1></h1>
+        {% for script in scripts %}
+            <table style="width:100%">
+                <tr>
+                    <th>
+                        <a href="/{{ script.name }}/">{{ script.name }}</a>
+                    </th>
+                    <td>{{ script.description }}</td>                        
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>Helper</td>
+                </tr>
+                {% for argument in arguments %}
+                <tr>
+                    <th>{{ argument.name }}</th>
+                    <td>{{ argument.helper }}</td>
+                </tr>
+                {% endfor %}    
+        {% endfor %}
+        
+      </body>
+</html> 
